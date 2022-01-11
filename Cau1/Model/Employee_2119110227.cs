@@ -8,7 +8,7 @@ namespace Cau1.Model
 {
     public class Employee_2119110227
     {
-        public int IdEmployee { set; get; }
+        public string IdEmployee { set; get; }
         public String Name { set; get; }
         public DateTime DateBirth { set; get; }
         public char Gender { set; get; }

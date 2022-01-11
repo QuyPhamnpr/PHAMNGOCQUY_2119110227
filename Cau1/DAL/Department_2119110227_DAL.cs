@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cau1.DAL
+namespace Cau1.dal
 {
     public class Department_2119110227_DAL : DBConnection
     {
@@ -21,7 +21,7 @@ namespace Cau1.DAL
             while (reader.Read())
             {
                 Department_2119110227 Depart = new Department_2119110227();
-                Depart.IdDepartment = reader["IdDepartment"].ToString();
+                Depart.IdDepartment = int.Parse(reader["IdDepartment"].ToString());
                 Depart.Name_Department = reader["name_department"].ToString();
                 lstDepartment.Add(Depart);
             }
@@ -38,7 +38,7 @@ namespace Cau1.DAL
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows && reader.Read())
             {
-                Department.IdDepartment = reader["IdDepartment"].ToString();
+                Department.IdDepartment = int.Parse(reader["IdDepartment"].ToString());
                 Department.Name_Department = reader["name_department"].ToString();
             }
             conn.Close();

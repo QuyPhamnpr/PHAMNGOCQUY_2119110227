@@ -1,4 +1,4 @@
-﻿using Cau1.DAL;
+﻿using Cau1.dal;
 using Cau1.Model;
 using System;
 using System.Collections.Generic;
@@ -16,5 +16,5 @@ namespace Cau1.BAL
             List<Department_2119110227> lstDepart = dal.ReadAreaList();
             return lstDepart;
         }
-}
+    }   
 }

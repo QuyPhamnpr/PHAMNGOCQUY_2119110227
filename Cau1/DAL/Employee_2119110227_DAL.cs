@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cau1.DAL
+namespace Cau1.dal
 {
     public class Employee_2119110227_DAL : DBConnection
     {
-        public List<Employee_2119110227_DAL> ReadCustomer()
+        public List<Employee_2119110227> ReadCustomer()
         {
             SqlConnection conn = CreateConnection();
             conn.Open();
@@ -23,14 +23,13 @@ namespace Cau1.DAL
             while (reader.Read())
             {
                 Employee_2119110227 Emp = new Employee_2119110227();
-                Emp.IdEmployee = int.Parse(reader["IdEmployee"].ToString());
+                Emp.IdEmployee = reader["IdEmployee"].ToString();
                 Emp.Name = reader["Name"].ToString();
                 Emp.DateBirth = DateTime.Parse(reader["DateBirth"].ToString());
                 Emp.Gender = char.Parse(reader["Gender"].ToString());
                 Emp.PlaceBirth = reader["PlaceBirth"].ToString();
                 Emp.Department = department.ReadArea(int.Parse(reader["IdDepartment"].ToString()));
                 lstEmployee.Add(Emp);
-
             }
             conn.Close();
             return lstEmployee;

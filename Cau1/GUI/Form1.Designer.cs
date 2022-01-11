@@ -40,16 +40,16 @@ namespace Cau1
             this.tbNoiSinh = new System.Windows.Forms.TextBox();
             this.dtNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Xóa = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noisinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donvi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Xóa = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.cbGioiTinh = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.SuspendLayout();
@@ -151,43 +151,7 @@ namespace Cau1
             this.dgvCustomer.RowTemplate.Height = 24;
             this.dgvCustomer.Size = new System.Drawing.Size(878, 278);
             this.dgvCustomer.TabIndex = 5;
-            this.dgvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellContentClick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(375, 420);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 43);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // Xóa
-            // 
-            this.Xóa.Location = new System.Drawing.Point(511, 420);
-            this.Xóa.Name = "Xóa";
-            this.Xóa.Size = new System.Drawing.Size(105, 43);
-            this.Xóa.TabIndex = 6;
-            this.Xóa.Text = "Xóa";
-            this.Xóa.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(647, 420);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 43);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(779, 420);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 43);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Thoát";
-            this.button4.UseVisualStyleBackColor = true;
+            this.dgvCustomer.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_RowEnter);
             // 
             // ma
             // 
@@ -236,6 +200,42 @@ namespace Cau1
             this.donvi.HeaderText = "Đơn vị";
             this.donvi.MinimumWidth = 6;
             this.donvi.Name = "donvi";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(375, 420);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 43);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Thêm";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // Xóa
+            // 
+            this.Xóa.Location = new System.Drawing.Point(511, 420);
+            this.Xóa.Name = "Xóa";
+            this.Xóa.Size = new System.Drawing.Size(105, 43);
+            this.Xóa.TabIndex = 6;
+            this.Xóa.Text = "Xóa";
+            this.Xóa.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(647, 420);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(105, 43);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Sửa";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(779, 420);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(105, 43);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Thoát";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // cbGioiTinh
             // 

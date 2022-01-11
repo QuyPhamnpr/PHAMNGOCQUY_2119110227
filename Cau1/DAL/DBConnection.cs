@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cau1.DAL
+namespace Cau1.dal
 {
     public class DBConnection
     {

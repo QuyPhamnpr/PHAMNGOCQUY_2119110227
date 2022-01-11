@@ -1,4 +1,4 @@
-﻿using Cau1.DAL;
+﻿using Cau1.dal;
 using Cau1.Model;
 using System;
 using System.Collections.Generic;
