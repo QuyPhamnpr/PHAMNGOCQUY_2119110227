@@ -46,19 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BAL\Department_MSSV_BAL.cs" />
-    <Compile Include="BAL\Employee_MSSV_BAL.cs" />
+    <Compile Include="BAL\Department_2119110227_BAL.cs" />
+    <Compile Include="BAL\Employee_2119110227_BAL.cs" />
     <Compile Include="DAL\DBConnection.cs" />
-    <Compile Include="DAL\Department_MSSV_DAL.cs" />
-    <Compile Include="DAL\Employee_MSSV_DAL.cs" />
+    <Compile Include="DAL\Department_2119110227_DAL.cs" />
+    <Compile Include="DAL\Employee_2119110227_DAL.cs" />
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Department_MSSV.cs" />
-    <Compile Include="Model\Employee_MSSV.cs" />
+    <Compile Include="Model\Department_2119110227.cs" />
+    <Compile Include="Model\Employee_2119110227.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Form1.resx">
