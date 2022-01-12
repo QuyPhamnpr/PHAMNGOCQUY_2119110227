@@ -34,7 +34,7 @@ namespace Cau1
             {
                 cbDonVi.Items.Add(depart);
             }
-            cbDonVi.DisplayMember = "Name_department";
+            cbDonVi.DisplayMember = "Name_Department";
         }
 
         private void dgvCustomer_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -152,7 +152,7 @@ namespace Cau1
                 row.Cells[2].Value = empp.DateBirth;
                 row.Cells[3].Value = empp.Gender;
                 row.Cells[4].Value = empp.PlaceBirth;
-                row.Cells[5].Value = empp.Department;
+                row.Cells[5].Value = empp.Department.Name_Department;
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using Cau1.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,8 @@ namespace Cau1.dal
         {
             SqlConnection conn = CreateConnection();
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from Employee_2119110227", conn);
+            SqlCommand cmd = new SqlCommand("selectEmployee_2119110227", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
             SqlDataReader reader = cmd.ExecuteReader();
 
             List<Employee_2119110227> lstEmployee = new List<Employee_2119110227>();
@@ -38,7 +40,11 @@ namespace Cau1.dal
         {
             SqlConnection conn = CreateConnection();
             conn.Open();
-            SqlCommand cmd = new SqlCommand("insert into Employee_2119110227 values (@IdEmployee, @name, @datebirth, @Gender, @PlaceBirth,@IdDepartment)", conn);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "ThemEployee_2119110227";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = conn;
             cmd.Parameters.Add(new SqlParameter("@IdEmployee", emp.IdEmployee));
             cmd.Parameters.Add(new SqlParameter("@Name", emp.Name));
             cmd.Parameters.Add(new SqlParameter("@DateBirth", emp.DateBirth));
@@ -50,26 +56,62 @@ namespace Cau1.dal
         }
         public void XoaEmployee(Employee_2119110227 emp)
         {
-            SqlConnection conn = CreateConnection();
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("delete from Employee_2119110227 where IdEmployee=@IdEmployee", conn);
-            cmd.Parameters.Add(new SqlParameter("@IdEmployee", emp.IdEmployee));
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            SqlConnection con = new SqlConnection();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "XoaEployee_2119110227";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = con;
+                cmd.Parameters.Add("@IdEmployee", SqlDbType.Int).Value = 1;
+                con.Open();
+
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+
+                Console.WriteLine("Xoa thanh cong !!!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Co loi xay ra !!!" + e);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
         public void SuaEmployee(Employee_2119110227 emp)
         {
-            SqlConnection conn = CreateConnection();
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("update Employee_2119110227 set name = @name, DateBirth= @DateBirth, Gender= @Gender,PlaceBirth= @PlaceBirth,IdDepartment= @IdDepartment where IdEmployee = @IdEmployee", conn);
-            cmd.Parameters.Add(new SqlParameter("@IdEmployee", emp.IdEmployee));
-            cmd.Parameters.Add(new SqlParameter("@Name", emp.Name));
-            cmd.Parameters.Add(new SqlParameter("@DateBirth", emp.DateBirth));
-            cmd.Parameters.Add(new SqlParameter("@Gender", emp.Gender));
-            cmd.Parameters.Add(new SqlParameter("@PlaceBirth", emp.PlaceBirth));
-            cmd.Parameters.Add(new SqlParameter("@IdDepartment", emp.Department.IdDepartment));
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            SqlConnection con = new SqlConnection();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SuaEployee_2119110227";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = con;
+
+                cmd.Parameters.Add("@IdEmployee", SqlDbType.Int).Value = emp.IdEmployee;
+                cmd.Parameters.Add("@Name", SqlDbType.NVarChar).Value = emp.Name;
+                cmd.Parameters.Add("@DateBirth", SqlDbType.Date).Value = emp.DateBirth;
+                cmd.Parameters.Add("@Gender", SqlDbType.NVarChar).Value = emp.Gender;
+                cmd.Parameters.Add("@PlaceBirth", SqlDbType.NVarChar).Value = emp.PlaceBirth;
+                cmd.Parameters.Add("@IdDepartment", SqlDbType.Int).Value = emp.Department.IdDepartment;
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                Console.WriteLine("Sua thanh cong !!!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Co loi xay ra !!!" + e);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }

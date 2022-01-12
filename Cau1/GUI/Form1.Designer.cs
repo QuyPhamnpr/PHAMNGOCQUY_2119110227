@@ -118,7 +118,7 @@ namespace Cau1
             this.cbDonVi.FormattingEnabled = true;
             this.cbDonVi.Location = new System.Drawing.Point(66, 53);
             this.cbDonVi.Name = "cbDonVi";
-            this.cbDonVi.Size = new System.Drawing.Size(121, 24);
+            this.cbDonVi.Size = new System.Drawing.Size(139, 24);
             this.cbDonVi.TabIndex = 3;
             // 
             // tbNoiSinh
