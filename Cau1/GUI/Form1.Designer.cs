@@ -46,10 +46,10 @@ namespace Cau1
             this.gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noisinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donvi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.Xóa = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.cbGioiTinh = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.SuspendLayout();
@@ -201,14 +201,15 @@ namespace Cau1
             this.donvi.MinimumWidth = 6;
             this.donvi.Name = "donvi";
             // 
-            // button1
+            // btnThem
             // 
-            this.button1.Location = new System.Drawing.Point(375, 420);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 43);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnThem.Location = new System.Drawing.Point(375, 420);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(105, 43);
+            this.btnThem.TabIndex = 6;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // Xóa
             // 
@@ -228,35 +229,36 @@ namespace Cau1
             this.button3.Text = "Sửa";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnThoat
             // 
-            this.button4.Location = new System.Drawing.Point(779, 420);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 43);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Thoát";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnThoat.Location = new System.Drawing.Point(779, 420);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(105, 43);
+            this.btnThoat.TabIndex = 6;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // cbGioiTinh
             // 
             this.cbGioiTinh.AutoSize = true;
             this.cbGioiTinh.Location = new System.Drawing.Point(779, 17);
             this.cbGioiTinh.Name = "cbGioiTinh";
-            this.cbGioiTinh.Size = new System.Drawing.Size(115, 21);
+            this.cbGioiTinh.Size = new System.Drawing.Size(113, 21);
             this.cbGioiTinh.TabIndex = 7;
-            this.cbGioiTinh.Text = "Giới tính Nam";
+            this.cbGioiTinh.Text = "Giới tính nam";
             this.cbGioiTinh.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(905, 485);
+            this.ClientSize = new System.Drawing.Size(934, 485);
             this.Controls.Add(this.cbGioiTinh);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.Xóa);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dgvCustomer);
             this.Controls.Add(this.dtNgaySinh);
             this.Controls.Add(this.cbDonVi);
@@ -290,10 +292,10 @@ namespace Cau1
         private System.Windows.Forms.TextBox tbNoiSinh;
         private System.Windows.Forms.DateTimePicker dtNgaySinh;
         private System.Windows.Forms.DataGridView dgvCustomer;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button Xóa;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.DataGridViewTextBoxColumn ma;
         private System.Windows.Forms.DataGridViewTextBoxColumn hoten;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaysinh;

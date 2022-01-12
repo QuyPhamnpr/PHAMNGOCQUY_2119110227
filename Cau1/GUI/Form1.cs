@@ -51,5 +51,69 @@ namespace Cau1
                 cbDonVi.Text = row.Cells[5].Value.ToString();
             }
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult f = MessageBox.Show("Ban co muon thoat?", "Thong Bao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (f == DialogResult.Yes)
+            {
+                this.Close();
+                Application.Exit();
+            }
+        }
+        public bool checkDulieu()
+        {
+            if (string.IsNullOrWhiteSpace(tbMa.Text))
+            {
+                MessageBox.Show("Chưa Nhập Mã", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(tbHoTen.Text))
+            {
+                MessageBox.Show("Chưa nhập Tên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(tbNoiSinh.Text))
+            {
+                MessageBox.Show("Chưa nhập Nơi Sinh", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(dtNgaySinh.Text))
+            {
+                MessageBox.Show("Chưa nhập Ngày Sinh", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(cbGioiTinh.Text))
+            {
+                MessageBox.Show("Chưa nhập Giới Tính", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(cbDonVi.Text))
+            {
+                MessageBox.Show("Chưa nhập Đơn Vị", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            return true;
+        }
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (checkDulieu())
+            {
+                Employee_2119110227 emp = new Employee_2119110227();
+                emp.IdEmployee = tbMa.Text;
+                emp.Name = tbHoTen.Text;
+                emp.DateBirth = DateTime.Parse(dtNgaySinh.Value.Date.ToString());
+                emp.Gender = char.Parse(cbGioiTinh.Text);
+                emp.PlaceBirth = tbNoiSinh.Text;
+                emp.Department = (Department_2119110227)cbDonVi.SelectedItem;
+
+
+
+                EmployBAL.NewEmployee(emp);
+
+                dgvCustomer.Rows.Add(emp.IdEmployee, emp.Name, emp.DateBirth, emp.Gender, emp.PlaceBirth, emp.Department.Name_Department);
+            }
+        }
     }
 }

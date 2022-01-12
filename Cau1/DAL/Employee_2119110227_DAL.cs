@@ -34,6 +34,19 @@ namespace Cau1.dal
             conn.Close();
             return lstEmployee;
         }
-
+        public void NewEmployee(Employee_2119110227 emp)
+        {
+            SqlConnection conn = CreateConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("insert into Employee values (@IdEmployee, @name, @datebirth, @Gender, @PlaceBirth,@IdDepartment)", conn);
+            cmd.Parameters.Add(new SqlParameter("@IdEmployee", emp.IdEmployee));
+            cmd.Parameters.Add(new SqlParameter("@Name", emp.Name));
+            cmd.Parameters.Add(new SqlParameter("@DateBirth", emp.DateBirth));
+            cmd.Parameters.Add(new SqlParameter("@Gender", emp.Gender));
+            cmd.Parameters.Add(new SqlParameter("@PlaceBirth", emp.PlaceBirth));
+            cmd.Parameters.Add(new SqlParameter("@IdDepartment", emp.Department.IdDepartment));
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }
