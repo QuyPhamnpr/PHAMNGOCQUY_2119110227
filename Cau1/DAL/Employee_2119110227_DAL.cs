@@ -34,11 +34,34 @@ namespace Cau1.dal
             conn.Close();
             return lstEmployee;
         }
-        public void NewEmployee(Employee_2119110227 emp)
+        public void ThemEmployee(Employee_2119110227 emp)
         {
             SqlConnection conn = CreateConnection();
             conn.Open();
-            SqlCommand cmd = new SqlCommand("insert into Employee values (@IdEmployee, @name, @datebirth, @Gender, @PlaceBirth,@IdDepartment)", conn);
+            SqlCommand cmd = new SqlCommand("insert into Employee_2119110227 values (@IdEmployee, @name, @datebirth, @Gender, @PlaceBirth,@IdDepartment)", conn);
+            cmd.Parameters.Add(new SqlParameter("@IdEmployee", emp.IdEmployee));
+            cmd.Parameters.Add(new SqlParameter("@Name", emp.Name));
+            cmd.Parameters.Add(new SqlParameter("@DateBirth", emp.DateBirth));
+            cmd.Parameters.Add(new SqlParameter("@Gender", emp.Gender));
+            cmd.Parameters.Add(new SqlParameter("@PlaceBirth", emp.PlaceBirth));
+            cmd.Parameters.Add(new SqlParameter("@IdDepartment", emp.Department.IdDepartment));
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public void XoaEmployee(Employee_2119110227 emp)
+        {
+            SqlConnection conn = CreateConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("delete from Employee_2119110227 where IdEmployee=@IdEmployee", conn);
+            cmd.Parameters.Add(new SqlParameter("@IdEmployee", emp.IdEmployee));
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public void SuaEmployee(Employee_2119110227 emp)
+        {
+            SqlConnection conn = CreateConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("update Employee_2119110227 set name = @name, DateBirth= @DateBirth, Gender= @Gender,PlaceBirth= @PlaceBirth,IdDepartment= @IdDepartment where IdEmployee = @IdEmployee", conn);
             cmd.Parameters.Add(new SqlParameter("@IdEmployee", emp.IdEmployee));
             cmd.Parameters.Add(new SqlParameter("@Name", emp.Name));
             cmd.Parameters.Add(new SqlParameter("@DateBirth", emp.DateBirth));

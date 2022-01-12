@@ -16,5 +16,17 @@ namespace Cau1.BAL
             List<Employee_2119110227> lstEmpl = dal.ReadCustomer();
             return lstEmpl;
         }
+        public void ThemEmployee(Employee_2119110227 emp)
+        {
+            dal.ThemEmployee(emp);
+        }
+        public void XoaEmployee(Employee_2119110227 emp)
+        {
+            dal.XoaEmployee(emp);
+        }
+        public void SuaEmployee(Employee_2119110227 emp)
+        {
+            dal.SuaEmployee(emp);
+        }
     }
 }

@@ -47,8 +47,8 @@ namespace Cau1
             this.noisinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donvi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThem = new System.Windows.Forms.Button();
-            this.Xóa = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.cbGioiTinh = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
@@ -211,23 +211,25 @@ namespace Cau1
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // Xóa
+            // btnXoa
             // 
-            this.Xóa.Location = new System.Drawing.Point(511, 420);
-            this.Xóa.Name = "Xóa";
-            this.Xóa.Size = new System.Drawing.Size(105, 43);
-            this.Xóa.TabIndex = 6;
-            this.Xóa.Text = "Xóa";
-            this.Xóa.UseVisualStyleBackColor = true;
+            this.btnXoa.Location = new System.Drawing.Point(511, 420);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(105, 43);
+            this.btnXoa.TabIndex = 6;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // button3
+            // btnSua
             // 
-            this.button3.Location = new System.Drawing.Point(647, 420);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 43);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSua.Location = new System.Drawing.Point(647, 420);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(105, 43);
+            this.btnSua.TabIndex = 6;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click_1);
             // 
             // btnThoat
             // 
@@ -256,8 +258,8 @@ namespace Cau1
             this.ClientSize = new System.Drawing.Size(934, 485);
             this.Controls.Add(this.cbGioiTinh);
             this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.Xóa);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dgvCustomer);
             this.Controls.Add(this.dtNgaySinh);
@@ -293,8 +295,8 @@ namespace Cau1
         private System.Windows.Forms.DateTimePicker dtNgaySinh;
         private System.Windows.Forms.DataGridView dgvCustomer;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button Xóa;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.DataGridViewTextBoxColumn ma;
         private System.Windows.Forms.DataGridViewTextBoxColumn hoten;
