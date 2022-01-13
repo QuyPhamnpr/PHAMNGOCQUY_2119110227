@@ -244,11 +244,12 @@ namespace Cau1
             // cbGioiTinh
             // 
             this.cbGioiTinh.AutoSize = true;
-            this.cbGioiTinh.Location = new System.Drawing.Point(779, 17);
+            this.cbGioiTinh.Location = new System.Drawing.Point(770, 19);
+            this.cbGioiTinh.Margin = new System.Windows.Forms.Padding(4);
             this.cbGioiTinh.Name = "cbGioiTinh";
-            this.cbGioiTinh.Size = new System.Drawing.Size(113, 21);
+            this.cbGioiTinh.Size = new System.Drawing.Size(124, 21);
             this.cbGioiTinh.TabIndex = 7;
-            this.cbGioiTinh.Text = "Giới tính nam";
+            this.cbGioiTinh.Text = "Giới Tính: Nam";
             this.cbGioiTinh.UseVisualStyleBackColor = true;
             // 
             // Form1

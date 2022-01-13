@@ -11,7 +11,7 @@ namespace Cau1.Model
         public string IdEmployee { set; get; }
         public String Name { set; get; }
         public DateTime DateBirth { set; get; }
-        public char Gender { set; get; }
+        public string Gender { set; get; }
         public String PlaceBirth { set; get; }
         public Department_2119110227 Department { get; set; }
 

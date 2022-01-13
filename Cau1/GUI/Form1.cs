@@ -46,7 +46,14 @@ namespace Cau1
                 tbMa.Text = row.Cells[0].Value.ToString();
                 tbHoTen.Text = row.Cells[1].Value.ToString();
                 dtNgaySinh.Text = row.Cells[2].Value.ToString();
-                cbGioiTinh.Text = row.Cells[3].Value.ToString();
+                if (row.Cells[3].Value.ToString() == "1")
+                {
+                    cbGioiTinh.Checked = true;
+                }
+                else
+                {
+                    cbGioiTinh.Checked = false;
+                }
                 tbNoiSinh.Text = row.Cells[4].Value.ToString();
                 cbDonVi.Text = row.Cells[5].Value.ToString();
             }
@@ -104,7 +111,14 @@ namespace Cau1
                 emp.IdEmployee = tbMa.Text;
                 emp.Name = tbHoTen.Text;
                 emp.DateBirth = DateTime.Parse(dtNgaySinh.Value.Date.ToString());
-                emp.Gender = char.Parse(cbGioiTinh.Text);
+                if (cbGioiTinh.Checked)
+                {
+                    emp.Gender = "1";
+                }
+                else
+                {
+                    emp.Gender = "0";
+                }
                 emp.PlaceBirth = tbNoiSinh.Text;
                 emp.Department = (Department_2119110227)cbDonVi.SelectedItem;
 
@@ -122,7 +136,7 @@ namespace Cau1
                 emp.IdEmployee = tbMa.Text;
                 emp.Name = tbHoTen.Text;
                 emp.DateBirth = DateTime.Parse(dtNgaySinh.Value.Date.ToString());
-                emp.Gender = char.Parse(cbGioiTinh.Text);
+                emp.Gender = cbGioiTinh.Text;
                 emp.PlaceBirth = tbNoiSinh.Text;
 
                 EmployBAL.XoaEmployee(emp);
@@ -141,7 +155,14 @@ namespace Cau1
                 empp.IdEmployee = tbMa.Text;
                 empp.Name = tbHoTen.Text;
                 empp.DateBirth = DateTime.Parse(dtNgaySinh.Value.Date.ToString());
-                empp.Gender = char.Parse(cbGioiTinh.Text);
+                if (cbGioiTinh.Checked)
+                {
+                    empp.Gender = "1";
+                }
+                else
+                {
+                    empp.Gender = "0";
+                }
                 empp.PlaceBirth = tbNoiSinh.Text;
                 empp.Department = (Department_2119110227)cbDonVi.SelectedItem;
 

@@ -28,7 +28,7 @@ namespace Cau1.dal
                 Emp.IdEmployee = reader["IdEmployee"].ToString();
                 Emp.Name = reader["Name"].ToString();
                 Emp.DateBirth = DateTime.Parse(reader["DateBirth"].ToString());
-                Emp.Gender = char.Parse(reader["Gender"].ToString());
+                Emp.Gender = reader["Gender"].ToString();
                 Emp.PlaceBirth = reader["PlaceBirth"].ToString();
                 Emp.Department = department.ReadArea(int.Parse(reader["IdDepartment"].ToString()));
                 lstEmployee.Add(Emp);
